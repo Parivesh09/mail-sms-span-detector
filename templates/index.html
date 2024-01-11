@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email/SMS Spam Classifier</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        label {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: none;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        h2 {
+            margin-top: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Email/SMS Spam Classifier</h1>
+    <form action="/" method="post">
+        <label for="message">Enter the message:</label>
+        <textarea name="message" id="message" cols="30" rows="10"></textarea>
+        <br>
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction %}
+        <h2>Prediction Result: {{ prediction }}</h2>
+    {% endif %}
+</body>
+</html>
